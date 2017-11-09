@@ -43,11 +43,11 @@ Each server must satisfy the following requirements
     - Response: {"error": "Invalid parameters"}
 
 - Perform the following on each request:
-  1. Log request, for example:
+  - Log request, for example:
     - 2017/11/11 11:11:12 [::1]:36942 GET /api/echo/HelloWorld?num=1234567890
-  2. Parse out the path and query string parameters
-  3. Verify the parameters
+  - Parse out the path and query string parameters
+  - Verify the parameters
     - Path parameter after "/api/echo" must be To-Lowercased and equal "helloworld"
     - Query parameter "num" must be converted to an int and equal 1234567890
     - Return Error path response if invalid
-  4. Return Happy path response
+  - Return Happy path response
