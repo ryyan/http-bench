@@ -19,6 +19,30 @@ then
   exit
 fi
 
+# If action is test, run it then exit
+if [ $ACTION == "test" ]
+then
+  HAPPY_TEST=$(curl -s localhost:8888/api/echo/HelloWorld?num=1234567890)
+  if [[ $HAPPY_TEST == "{\"message\":"* ]]
+  then
+    printf "HappyTest-PASS, "
+  else
+    printf "HappyTest-FAIL, "
+    printf "$HAPPY_TEST, "
+  fi
+
+  ERROR_TEST=$(curl -s localhost:8888/api/echo/GoodbyeWorld?num=321)
+  if [[ $ERROR_TEST == "{\"error\":\"Invalid parameters\"}" ]]
+  then
+    printf "ErrorTest-PASS\n"
+  else
+    printf "ErrorTest-FAIL, "
+    printf "$ERROR_TEST\n"
+  fi
+
+  exit
+fi
+
 # Verify second param exists (server/directory)
 if [ -f $SERVER ]
 then
@@ -40,6 +64,8 @@ case $ACTION in
     docker build --rm -t $NAME .
     ;;
   "start")
+    docker kill $NAME
+    docker rm --force $NAME
     docker run -it --rm --name=$NAME --net="host" -d $NAME
     ;;
   "stop")
