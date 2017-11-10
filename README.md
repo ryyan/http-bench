@@ -4,22 +4,25 @@ Benchmarks http servers
 
 ## Run
 
-Use run.sh to run individual servers and benchmarks
+Use `./run <action> <server>` to run individual servers and benchmarks
 
 ```bash
-./run build go/go  # Builds docker image
-./run start go/go  # Run daemon
-./run info go/go   # Run info script
-./run test         # Run happy/error path tests
-./run benchmark    # Run benchmark
-./run stop go/go   # Stop daemon
-./run clean go/go  # Deletes docker image
+./run list              # List servers
+./run build go/go       # Builds docker image
+./run start go/go       # Run in daemon mode
+./run start-int go/go   # Run in interactive mode
+./run start-dev go/go   # Run in development mode
+./run info go/go        # Run info script
+./run test              # Run happy/error path tests
+./run benchmark         # Run benchmark
+./run stop go/go        # Stop daemon
+./run clean go/go       # Deletes docker image
 ```
 
-Use benchmark.sh to run the full suite of benchmarks and output to RESULTS.md
+Use `./run-benchmarks` to run the full suite of benchmarks and output to RESULTS.md
 
 ```bash
-./benchmark
+./run-benchmarks
 ```
 
 (Optional) Clear up disk space :whale:
@@ -45,7 +48,7 @@ Each server must satisfy the following requirements
     - Response: `{"error": "Invalid parameters"}`
 
 - Perform the following on each request:
-  - Log request, for example:
+  - Log request, for example [Date IP Method Url]:
     - `2017/11/11 11:11:12 [::1]:36942 GET /api/echo/HelloWorld?num=1234567890`
   - Parse out the path and query string parameters
   - Verify the parameters

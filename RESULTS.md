@@ -1,4 +1,4 @@
-10 Nov 2017, 11:35
+10 Nov 2017, 16:32
 
 ```
 Linux 4.13.0-16-generic
@@ -34,9 +34,33 @@ HappyTest-PASS, ErrorTest-PASS
 Running 10s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   2 threads and 10 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   643.43us    1.58ms  26.69ms   94.27%
-    Req/Sec    16.24k     1.37k   29.22k    83.08%
-  324938 requests in 10.10s, 48.96MB read
-Requests/sec:  32171.97
-Transfer/sec:      4.85MB
+    Latency   599.76us    1.39ms  24.09ms   94.35%
+    Req/Sec    16.05k     1.58k   31.55k    84.58%
+  320957 requests in 10.10s, 48.36MB read
+Requests/sec:  31780.24
+Transfer/sec:      4.79MB
+```
+
+---
+
+##node/express
+
+```
+v8.6.0
+express@ /app
++-- express@4.16.2 
+`-- uuid@3.1.0 
+
+```
+
+```
+HappyTest-PASS, ErrorTest-PASS
+Running 10s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.29ms  728.99us  12.08ms   92.83%
+    Req/Sec     2.23k   308.46     2.58k    85.00%
+  44347 requests in 10.00s, 11.08MB read
+Requests/sec:   4433.04
+Transfer/sec:      1.11MB
 ```

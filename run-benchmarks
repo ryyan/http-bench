@@ -21,9 +21,8 @@ echo >> $RESULTS
 docker version >> $RESULTS
 echo "\`\`\`" >> $RESULTS
 
-# Iterate over subdirectories in /servers and run benchmarks
-cd $SOURCE/servers
-for d in $(ls -dR */**); do
+# Iterate over servers and run benchmarks
+for d in $($RUN list); do
   # Add horizontal linebreak and server header
   printf "\n---\n\n" >> $RESULTS
   echo "##$d" | tee -a $RESULTS

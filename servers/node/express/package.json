@@ -1,0 +1,10 @@
+{
+  "name": "express",
+  "description": "",
+  "private": "true",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4",
+    "uuid": "^3"
+  }
+}

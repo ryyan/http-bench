@@ -2,11 +2,20 @@
 
 ACTION=$1
 SERVER=$2
+SOURCE=$(dirname $(readlink -f $0))
 
 # Verify first param exists (action)
 if [ -f $ACTION ]
 then
-  echo "First parameter required (benchmark|build|start|stop|clean)"
+  echo "First parameter required (list|benchmark|build|start|info|stop|clean)"
+  exit
+fi
+
+# If action is list, run it then exit
+if [ $ACTION == "list" ]
+then
+  cd $SOURCE/servers
+  for d in $(ls -dR */**); do echo $d; done
   exit
 fi
 
@@ -51,20 +60,25 @@ then
 fi
 
 # cd to server directory
-SOURCE=$(dirname $(readlink -f $0))
 cd $SOURCE/servers/$SERVER
 
 # Docker image name
 SUFFIX=${SERVER//\//-} # Convert / to -
 NAME=httpbenchserver-$SUFFIX
 
-# Run action
+# Run server action
 case $ACTION in
   "build")
     docker build --rm -t $NAME .
     ;;
   "start")
-    docker run -it --rm --name=$NAME --net="host" -d $NAME
+    docker run -dt --rm --name=$NAME --net="host" $NAME
+    ;;
+  "start-int")
+    docker run -it --rm --name=$NAME --net="host" $NAME
+    ;;
+  "start-dev")
+    docker run -it --rm --name=$NAME --net="host" -v ${PWD}:/app $NAME sh
     ;;
   "info")
     docker exec $NAME sh info
