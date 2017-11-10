@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Source directory path
+# Script directory path
 SOURCE=$(dirname $(readlink -f $0))
 
 # Run script path
@@ -12,16 +12,43 @@ touch $RESULTS
 
 # Print current date to top of Results
 date +"%d %b %G, %R" > $RESULTS
-echo '---' >> $RESULTS
+echo >> $RESULTS
+
+# Add host info block
+echo "\`\`\`" >> $RESULTS
+uname -sr >> $RESULTS
+echo >> $RESULTS
+docker version >> $RESULTS
+echo "\`\`\`" >> $RESULTS
 
 # Iterate over subdirectories in /servers and run benchmarks
 cd $SOURCE/servers
 for d in $(ls -dR */**); do
+  # Add horizontal linebreak and server header
+  printf "\n---\n\n" >> $RESULTS
+  echo "##$d" | tee -a $RESULTS
+
+  # Build and start server
   $RUN build $d
   $RUN start $d
-  sleep 2
+  sleep 3
+
+  # Add server info
+  echo >> $RESULTS
+  echo "\`\`\`" >> $RESULTS
+  $RUN info $d | tee -a $RESULTS
+  echo "\`\`\`" >> $RESULTS
+
+  # Add test and benchmark block
+  echo >> $RESULTS
+  echo "\`\`\`" >> $RESULTS
   $RUN test | tee -a $RESULTS
   $RUN benchmark | tee -a $RESULTS
+  echo "\`\`\`" >> $RESULTS
+
+  # Stop and delete server image
   $RUN stop $d
   $RUN clean $d
 done
+
+

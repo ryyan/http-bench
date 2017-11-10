@@ -64,8 +64,6 @@ case $ACTION in
     docker build --rm -t $NAME .
     ;;
   "start")
-    docker kill $NAME
-    docker rm --force $NAME
     docker run -it --rm --name=$NAME --net="host" -d $NAME
     ;;
   "info")
@@ -76,7 +74,6 @@ case $ACTION in
     docker rm --force $NAME
     ;;
   "clean")
-    docker kill $NAME
     docker rmi --force $NAME
     ;;
 esac
