@@ -9,13 +9,12 @@ RUN=$SOURCE/run
 # Results output file
 RESULTS=$SOURCE/RESULTS.md
 touch $RESULTS
-
-# Print current date to top of Results
-date +"%d %b %G, %R" > $RESULTS
-echo >> $RESULTS
+> $RESULTS
 
 # Add host info block
 echo "\`\`\`" >> $RESULTS
+date +"%d %b %G" >> $RESULTS
+echo >> $RESULTS
 uname -sr >> $RESULTS
 echo >> $RESULTS
 docker version >> $RESULTS
