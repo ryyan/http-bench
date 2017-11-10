@@ -4,7 +4,7 @@
 SOURCE=$(dirname $(readlink -f $0))
 
 # Run script path
-RUN=$SOURCE/run.sh
+RUN=$SOURCE/run
 
 # Results output file
 RESULTS=$SOURCE/RESULTS.md

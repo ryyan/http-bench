@@ -7,18 +7,18 @@ Benchmarks http servers
 Use run.sh to run individual servers and benchmarks
 
 ```bash
-./run.sh build go/go  # Builds docker image
-./run.sh start go/go  # Run daemon
-./run.sh test         # Run happy/error path tests
-./run.sh benchmark    # Run benchmark
-./run.sh stop go/go   # Stop daemon
-./run.sh clean go/go  # Deletes docker image
+./run build go/go  # Builds docker image
+./run start go/go  # Run daemon
+./run test         # Run happy/error path tests
+./run benchmark    # Run benchmark
+./run stop go/go   # Stop daemon
+./run clean go/go  # Deletes docker image
 ```
 
 Use benchmark.sh to run the full suite of benchmarks and output to RESULTS.md
 
 ```bash
-./benchmark.sh
+./benchmark
 ```
 
 (Optional) Clear up disk space :whale:

@@ -73,6 +73,7 @@ case $ACTION in
     docker rm --force $NAME
     ;;
   "clean")
+    docker kill $NAME
     docker rmi --force $NAME
     ;;
 esac
