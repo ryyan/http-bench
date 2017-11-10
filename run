@@ -68,6 +68,9 @@ case $ACTION in
     docker rm --force $NAME
     docker run -it --rm --name=$NAME --net="host" -d $NAME
     ;;
+  "info")
+    docker exec $NAME sh info
+    ;;
   "stop")
     docker kill $NAME
     docker rm --force $NAME

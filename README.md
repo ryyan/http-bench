@@ -9,6 +9,7 @@ Use run.sh to run individual servers and benchmarks
 ```bash
 ./run build go/go  # Builds docker image
 ./run start go/go  # Run daemon
+./run info go/go   # Run info script
 ./run test         # Run happy/error path tests
 ./run benchmark    # Run benchmark
 ./run stop go/go   # Stop daemon
