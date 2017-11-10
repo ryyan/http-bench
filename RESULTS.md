@@ -23,7 +23,7 @@ Server:
 
 ---
 
-##go/go
+## go/go
 
 ```
 go version go1.9 linux/amd64
@@ -43,7 +43,7 @@ Transfer/sec:      4.79MB
 
 ---
 
-##node/express
+## node/express
 
 ```
 v8.6.0

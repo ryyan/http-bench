@@ -2,6 +2,8 @@
 
 Benchmarks http servers
 
+[View the latest results](RESULTS.md)
+
 ## Run
 
 Use `./run <action> <server>` to run individual servers and benchmarks

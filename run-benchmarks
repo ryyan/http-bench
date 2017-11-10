@@ -25,7 +25,7 @@ echo "\`\`\`" >> $RESULTS
 for d in $($RUN list); do
   # Add horizontal linebreak and server header
   printf "\n---\n\n" >> $RESULTS
-  echo "##$d" | tee -a $RESULTS
+  echo "## $d" | tee -a $RESULTS
 
   # Build and start server
   $RUN build $d
