@@ -12,6 +12,7 @@ touch $RESULTS
 > $RESULTS
 
 # Add host info block
+echo "# Host Info" >> $RESULTS
 echo "\`\`\`" >> $RESULTS
 date +"%d %b %G" >> $RESULTS
 echo >> $RESULTS
@@ -19,17 +20,19 @@ uname -sr >> $RESULTS
 echo >> $RESULTS
 docker version >> $RESULTS
 echo "\`\`\`" >> $RESULTS
+printf "\n---\n\n" >> $RESULTS
+echo "# Benchmarks" >> $RESULTS
+echo >> $RESULTS
 
 # Iterate over servers and run benchmarks
 for d in $($RUN list); do
-  # Add horizontal linebreak and server header
-  printf "\n---\n\n" >> $RESULTS
+  # Add server header
   echo "## $d" | tee -a $RESULTS
 
   # Build and start server
   $RUN build $d
   $RUN start $d
-  sleep 3
+  sleep 5
 
   # Add server info
   echo >> $RESULTS
@@ -48,5 +51,3 @@ for d in $($RUN list); do
   $RUN stop $d
   $RUN clean $d
 done
-
-

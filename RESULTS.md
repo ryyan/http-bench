@@ -1,3 +1,4 @@
+# Host Info
 ```
 10 Nov 2017
 
@@ -23,6 +24,8 @@ Server:
 
 ---
 
+# Benchmarks
+
 ## go/go
 
 ```
@@ -31,18 +34,15 @@ go version go1.9 linux/amd64
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 30s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 2m test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     0.93ms    1.54ms  32.41ms   93.13%
-    Req/Sec     8.01k   767.52    10.75k    70.33%
-  957328 requests in 30.04s, 144.25MB read
-Requests/sec:  31872.45
-Transfer/sec:      4.80MB
+    Latency     0.95ms    1.62ms  36.93ms   93.29%
+    Req/Sec     7.94k   819.98    30.76k    74.19%
+  3794436 requests in 2.00m, 571.75MB read
+Requests/sec:  31594.12
+Transfer/sec:      4.76MB
 ```
-
----
-
 ## node/express
 
 ```
@@ -55,12 +55,12 @@ express@ /app
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 30s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 2m test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     4.42ms    0.89ms  17.50ms   93.82%
-    Req/Sec     1.14k    98.59     1.29k    91.92%
-  136611 requests in 30.02s, 34.13MB read
-Requests/sec:   4550.99
-Transfer/sec:      1.14MB
+    Latency     4.26ms  818.27us  18.91ms   95.52%
+    Req/Sec     1.19k    67.59     1.90k    83.94%
+  567357 requests in 2.00m, 141.76MB read
+Requests/sec:   4725.49
+Transfer/sec:      1.18MB
 ```
