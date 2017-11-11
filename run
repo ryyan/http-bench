@@ -36,7 +36,8 @@ case $ACTION in
     fi
 
     ERROR_TEST=$(curl -s localhost:8888/api/echo/GoodbyeWorld?num=321)
-    if [[ $ERROR_TEST == "{\"error\":\"Invalid parameters\"}" ]]
+    if [[ $ERROR_TEST == "{\"error\":"*"\"Invalid parameters\"}" ]]
+
     then
       printf "ErrorTest-PASS\n"
     else

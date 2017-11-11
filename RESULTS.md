@@ -37,11 +37,11 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   469.83us    0.89ms  21.07ms   95.40%
-    Req/Sec    33.16k     1.51k   36.72k    65.45%
-  362949 requests in 11.00s, 54.69MB read
-Requests/sec:  32994.97
-Transfer/sec:      4.97MB
+    Latency   437.72us  769.70us  17.78ms   95.53%
+    Req/Sec    33.07k     1.60k   36.86k    71.82%
+  361806 requests in 11.00s, 54.52MB read
+Requests/sec:  32890.00
+Transfer/sec:      4.96MB
 ```
 ## node/express
 
@@ -58,9 +58,37 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.53ms  746.09us  12.31ms   92.61%
-    Req/Sec     4.42k   564.52     4.92k    88.18%
-  48327 requests in 11.00s, 12.08MB read
-Requests/sec:   4393.16
-Transfer/sec:      1.10MB
+    Latency     2.50ms  746.95us  12.54ms   92.98%
+    Req/Sec     4.48k   562.96     4.98k    89.09%
+  48990 requests in 11.00s, 12.24MB read
+Requests/sec:   4453.47
+Transfer/sec:      1.11MB
+```
+## python/aiohttp
+
+```
+Python 3.6.3
+Package       Version
+------------- -------
+aiohttp       2.3.2  
+async-timeout 2.0.0  
+cchardet      2.1.1  
+chardet       3.0.4  
+multidict     3.3.2  
+pip           9.0.1  
+setuptools    36.6.0 
+wheel         0.30.0 
+yarl          0.13.0 
+```
+
+```
+HappyTest-PASS, ErrorTest-PASS
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+  1 threads and 11 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.10ms  181.24us  11.51ms   83.37%
+    Req/Sec     2.70k    85.30     2.84k    60.91%
+  29522 requests in 11.00s, 5.43MB read
+Requests/sec:   2683.63
+Transfer/sec:    505.80KB
 ```
