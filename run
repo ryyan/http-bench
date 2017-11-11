@@ -59,7 +59,7 @@ cd $SOURCE/servers/$SERVER
 
 # Docker image name
 SUFFIX=${SERVER//\//-} # Convert / to -
-NAME=httpbenchserver-$SUFFIX
+NAME=httpbench-$SUFFIX
 
 # Run server action
 case $ACTION in
