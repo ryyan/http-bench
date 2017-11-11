@@ -22,11 +22,11 @@ docker version >> $RESULTS
 echo "\`\`\`" >> $RESULTS
 printf "\n---\n\n" >> $RESULTS
 echo "# Benchmarks" >> $RESULTS
-echo >> $RESULTS
 
 # Iterate over servers and run benchmarks
 for d in $($RUN list); do
   # Add server header
+  echo >> $RESULTS
   echo "## $d" | tee -a $RESULTS
 
   # Build and start server
