@@ -4,7 +4,7 @@
   "private": "true",
   "main": "server.js",
   "dependencies": {
-    "express": "^4",
-    "uuid": "^3"
+    "express": "latest",
+    "uuid": "latest"
   }
 }
