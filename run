@@ -35,7 +35,7 @@ case $ACTION in
       printf "$HAPPY_TEST, "
     fi
 
-    ERROR_TEST=$(curl -s localhost:8888/api/echo/GoodbyeWorld?num=321)
+    ERROR_TEST=$(curl -s localhost:8888/api/echo/AlohaWorld?num=321)
     if [[ $ERROR_TEST == "{\"error\":"*"\"Invalid parameters\"}" ]]
 
     then
