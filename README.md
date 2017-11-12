@@ -57,9 +57,11 @@ Each server must:
   - Verify the parameters
     - Path parameter after "/api/echo" must be To-Lowercased and equal "helloworld"
     - Query parameter "num" must be converted to an int and equal 1234567890
-    - If either parameter is invalid (error path), return
-      - Status: `400 Bad Request` Body: `{"error": "Invalid parameters"}`
-    - If both are valid (happy path), return
-      - Status: `200 OK` Body: `{"message": "random UUID v4"}`
+  - If either parameter is invalid (error path), return
+    - Status: `400 Bad Request`
+    - Body: `{"error": "Invalid parameters"}`
+  - If both are valid (happy path), return
+    - Status: `200 OK`
+    - Body: `{"message": "random UUID v4"}`
 
 - Be consistent across languages - think "real-world usage" instead of "maximum performance"
