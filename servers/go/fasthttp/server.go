@@ -26,7 +26,7 @@ func EchoHandler(ctx *fasthttp.RequestCtx) {
 	// Log request
 	log.Printf("%s %s %s", ctx.RemoteAddr(), ctx.Method(), ctx.URI())
 
-	// Parse path and query string parameters
+	// Parse parameters
 	words := strings.TrimLeft(path, "/api/echo/")
 	number, _ := ctx.URI().QueryArgs().GetUint("num")
 

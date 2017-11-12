@@ -66,3 +66,5 @@ Each server must satisfy the following requirements
     - Query parameter "num" must be converted to an int and equal 1234567890
     - Return Error path response if invalid
   - Return Happy path response
+
+- Be human readable and consistent across languages/frameworks - this benchmark prioritizes "average usage" over "maximum performance"

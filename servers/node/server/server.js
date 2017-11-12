@@ -8,7 +8,7 @@ async function EchoHandler(ctx) {
   // Log request
   console.log(`${new Date().toLocaleString()} ${ctx.ip} ${ctx.method} ${ctx.url}`);
 
-  // Parse path and query string parameters
+  // Parse parameters
   let words = ctx.params.words
   let number = ctx.query.num
 

@@ -4,9 +4,9 @@ set :port, 8888
 
 get '/api/echo/:words' do
   # Log request
-  # Automatically done by Sinatra
+  # Automatically done
 
-  # Parse path and query string parameters
+  # Parse parameters
   words = params['words']
   num = params['num']
 

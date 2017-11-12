@@ -5,7 +5,7 @@ function EchoHandler(req, res) {
   // Log request
   console.log(`${new Date().toLocaleString()} ${req.ip} ${req.method} ${req.originalUrl}`);
 
-  // Parse path and query string parameters
+  // Parse parameters
   let words = req.params.words
   let number = req.query.num
 
