@@ -4,13 +4,17 @@ Benchmarks http servers
 
 [View the latest results](RESULTS.md)
 
+## Setup
+
+Install [Docker](https://www.docker.com)
+
 ## Run
 
 Use `./run <action> <server>` to run individual servers and benchmarks
 
 ```bash
 ./run list              # List servers
-./run build go/go       # Builds docker image
+./run build go/go       # Build docker image
 ./run start go/go       # Run in daemon mode
 ./run start-int go/go   # Run in interactive mode
 ./run start-dev go/go   # Run in development mode
@@ -18,7 +22,7 @@ Use `./run <action> <server>` to run individual servers and benchmarks
 ./run test              # Run happy/error path tests
 ./run benchmark         # Run benchmark
 ./run stop go/go        # Stop daemon
-./run clean go/go       # Deletes docker image
+./run clean go/go       # Delete docker image
 ```
 
 Use `./run-benchmarks` to run the full suite of benchmarks and output to RESULTS.md
@@ -37,11 +41,15 @@ docker system prune
 
 Each server must satisfy the following requirements
 
+- Include a `Dockerfile` with a CMD
+
+- Include an `info` executable that will be used to get relevant language version and package info
+
 - Listen on port 8888 and have an "/api/echo/" endpoint
   - "/api/echo/" endpoint expects "HelloWorld" path parameter and "?num=1234567890" query parameter
   - `localhost:8888/api/echo/HelloWorld?num=1234567890`
 
-- Return a json response with "Content-Type" of "application/json"
+- Return a json response
   - Happy path:
     - Status: `200 OK`
     - Response: `{"message": "random UUID v4"}`
