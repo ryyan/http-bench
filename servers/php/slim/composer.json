@@ -1,0 +1,16 @@
+{
+  "name": "slim",
+  "require": {
+    "php": ">=5.5.0",
+    "slim/slim": "@dev",
+    "slim/php-view": "@dev",
+    "monolog/monolog": "@dev",
+    "ramsey/uuid": "@dev"
+  },
+  "config": {
+    "process-timeout" : 0
+  },
+  "scripts": {
+    "start": "php -S 0.0.0.0:8888 server.php"
+  }
+}
