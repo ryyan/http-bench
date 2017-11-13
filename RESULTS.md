@@ -34,14 +34,14 @@ go version go1.9 linux/amd64
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   423.10us    1.15ms  20.05ms   96.81%
-    Req/Sec    42.48k     2.77k   46.25k    70.00%
-  42277 requests in 1.00s, 7.10MB read
-Requests/sec:  42269.05
-Transfer/sec:      7.09MB
+    Latency   418.03us    1.22ms  32.47ms   96.56%
+    Req/Sec    45.52k     2.09k   49.46k    75.68%
+  502484 requests in 11.10s, 84.34MB read
+Requests/sec:  45268.92
+Transfer/sec:      7.60MB
 ```
 
 ## go/go
@@ -52,14 +52,14 @@ go version go1.9 linux/amd64
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   408.88us  606.53us  12.78ms   95.14%
-    Req/Sec    33.01k     2.18k   35.53k    72.73%
-  36085 requests in 1.10s, 5.44MB read
-Requests/sec:  32804.58
-Transfer/sec:      4.94MB
+    Latency   436.08us  715.32us  17.77ms   95.17%
+    Req/Sec    32.66k     1.33k   35.19k    70.27%
+  360731 requests in 11.10s, 54.36MB read
+Requests/sec:  32497.51
+Transfer/sec:      4.90MB
 ```
 
 ## node/express
@@ -74,14 +74,14 @@ express@ /app
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     3.76ms    1.08ms  12.28ms   88.37%
-    Req/Sec     2.95k   474.67     3.52k    60.00%
-  2938 requests in 1.00s, 751.71KB read
-Requests/sec:   2928.03
-Transfer/sec:    749.16KB
+    Latency     2.51ms  755.76us  12.45ms   92.94%
+    Req/Sec     4.45k   573.64     5.02k    89.09%
+  48744 requests in 11.00s, 12.18MB read
+Requests/sec:   4430.65
+Transfer/sec:      1.11MB
 ```
 
 ## node/server
@@ -97,14 +97,14 @@ server@ /app
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    48.22ms    7.85ms  59.84ms   92.89%
-    Req/Sec   226.20     18.20   252.00     70.00%
-  225 requests in 1.00s, 138.77KB read
-Requests/sec:    224.68
-Transfer/sec:    138.57KB
+    Latency    46.17ms    3.74ms  68.31ms   87.97%
+    Req/Sec   238.88     19.64   290.00     80.91%
+  2619 requests in 11.01s, 1.51MB read
+Requests/sec:    237.91
+Transfer/sec:    140.75KB
 ```
 
 ## php/slim
@@ -118,14 +118,14 @@ Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.07ms    0.86ms  12.60ms   86.97%
-    Req/Sec     1.56k    67.01     1.64k    60.00%
-  1550 requests in 1.00s, 387.45KB read
-Requests/sec:   1549.59
-Transfer/sec:    387.34KB
+    Latency     6.90ms  823.54us  14.98ms   77.15%
+    Req/Sec     1.60k    47.34     1.67k    69.09%
+  17520 requests in 11.00s, 4.28MB read
+Requests/sec:   1592.34
+Transfer/sec:    398.01KB
 ```
 
 ## python/aiohttp
@@ -147,14 +147,14 @@ yarl          0.14.0
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     4.02ms  300.08us   9.45ms   97.51%
-    Req/Sec     2.74k   120.69     2.85k    80.00%
-  2729 requests in 1.00s, 514.35KB read
-Requests/sec:   2725.33
-Transfer/sec:    513.66KB
+    Latency     4.11ms  177.66us  11.48ms   81.91%
+    Req/Sec     2.69k    82.54     2.84k    66.36%
+  29452 requests in 11.00s, 5.42MB read
+Requests/sec:   2677.32
+Transfer/sec:    504.61KB
 ```
 
 ## python/flask
@@ -176,14 +176,14 @@ wheel        0.30.0
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.33ms  434.20us  13.48ms   98.65%
-    Req/Sec     1.49k    56.12     1.55k    81.82%
-  1632 requests in 1.10s, 313.99KB read
-Requests/sec:   1484.23
-Transfer/sec:    285.55KB
+    Latency     7.42ms    1.86ms  25.37ms   93.69%
+    Req/Sec     1.37k   379.08     1.61k    83.64%
+  14978 requests in 11.04s, 2.81MB read
+Requests/sec:   1356.69
+Transfer/sec:    261.00KB
 ```
 
 ## ruby/sinatra
@@ -196,12 +196,12 @@ sinatra-contrib (2.0.0)
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 1s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    44.21ms    7.32ms  56.00ms   88.11%
-    Req/Sec   244.60     14.30   262.00     60.00%
-  244 requests in 1.00s, 64.75KB read
-Requests/sec:    243.50
-Transfer/sec:     64.62KB
+    Latency    45.25ms    3.10ms  58.13ms   94.08%
+    Req/Sec   243.61     11.64   270.00     74.55%
+  2669 requests in 11.00s, 687.58KB read
+Requests/sec:    242.57
+Transfer/sec:     62.49KB
 ```
