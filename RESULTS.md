@@ -1,6 +1,6 @@
 # Host Info
 ```
-11 Nov 2017
+13 Nov 2017
 
 Linux 4.13.0-16-generic
 
@@ -37,11 +37,11 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   382.86us    0.99ms  23.64ms   96.54%
-    Req/Sec    45.70k     1.91k   49.39k    70.00%
-  500136 requests in 11.00s, 83.95MB read
-Requests/sec:  45464.19
-Transfer/sec:      7.63MB
+    Latency   418.03us    1.22ms  32.47ms   96.56%
+    Req/Sec    45.52k     2.09k   49.46k    75.68%
+  502484 requests in 11.10s, 84.34MB read
+Requests/sec:  45268.92
+Transfer/sec:      7.60MB
 ```
 
 ## go/go
@@ -55,11 +55,11 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   443.59us  796.39us  20.42ms   95.40%
-    Req/Sec    33.54k     1.29k   36.04k    76.58%
-  370340 requests in 11.10s, 55.80MB read
-Requests/sec:  33363.50
-Transfer/sec:      5.03MB
+    Latency   436.08us  715.32us  17.77ms   95.17%
+    Req/Sec    32.66k     1.33k   35.19k    70.27%
+  360731 requests in 11.10s, 54.36MB read
+Requests/sec:  32497.51
+Transfer/sec:      4.90MB
 ```
 
 ## node/express
@@ -77,10 +77,10 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.52ms  743.44us  12.28ms   93.01%
-    Req/Sec     4.45k   567.27     5.08k    87.27%
-  48654 requests in 11.00s, 12.16MB read
-Requests/sec:   4422.76
+    Latency     2.51ms  755.76us  12.45ms   92.94%
+    Req/Sec     4.45k   573.64     5.02k    89.09%
+  48744 requests in 11.00s, 12.18MB read
+Requests/sec:   4430.65
 Transfer/sec:      1.11MB
 ```
 
@@ -100,11 +100,32 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    46.38ms    3.79ms  68.14ms   86.20%
-    Req/Sec   237.35     15.29   290.00     67.27%
-  2602 requests in 11.01s, 1.51MB read
-Requests/sec:    236.35
-Transfer/sec:    140.04KB
+    Latency    46.17ms    3.74ms  68.31ms   87.97%
+    Req/Sec   238.88     19.64   290.00     80.91%
+  2619 requests in 11.01s, 1.51MB read
+Requests/sec:    237.91
+Transfer/sec:    140.75KB
+```
+
+## php/slim
+
+```
+PHP 7.1.11 (cli) (built: Nov  4 2017 10:39:58) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
+    with Zend OPcache v7.1.11, Copyright (c) 1999-2017, by Zend Technologies
+```
+
+```
+HappyTest-PASS, ErrorTest-PASS
+Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
+  1 threads and 11 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     6.90ms  823.54us  14.98ms   77.15%
+    Req/Sec     1.60k    47.34     1.67k    69.09%
+  17520 requests in 11.00s, 4.28MB read
+Requests/sec:   1592.34
+Transfer/sec:    398.01KB
 ```
 
 ## python/aiohttp
@@ -129,11 +150,11 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     4.02ms  175.10us  12.02ms   87.88%
-    Req/Sec     2.75k    73.84     2.88k    68.18%
-  30097 requests in 11.00s, 5.54MB read
-Requests/sec:   2735.91
-Transfer/sec:    515.65KB
+    Latency     4.11ms  177.66us  11.48ms   81.91%
+    Req/Sec     2.69k    82.54     2.84k    66.36%
+  29452 requests in 11.00s, 5.42MB read
+Requests/sec:   2677.32
+Transfer/sec:    504.61KB
 ```
 
 ## python/flask
@@ -158,11 +179,11 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.45ms    1.80ms  23.54ms   93.95%
-    Req/Sec     1.37k   365.57     1.61k    84.55%
-  15035 requests in 11.04s, 2.82MB read
-Requests/sec:   1362.17
-Transfer/sec:    262.06KB
+    Latency     7.42ms    1.86ms  25.37ms   93.69%
+    Req/Sec     1.37k   379.08     1.61k    83.64%
+  14978 requests in 11.04s, 2.81MB read
+Requests/sec:   1356.69
+Transfer/sec:    261.00KB
 ```
 
 ## ruby/sinatra
@@ -178,9 +199,9 @@ HappyTest-PASS, ErrorTest-PASS
 Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
   1 threads and 11 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    45.57ms    3.53ms  64.01ms   92.57%
-    Req/Sec   241.80     10.28   262.00     77.27%
-  2650 requests in 11.03s, 682.49KB read
-Requests/sec:    240.35
-Transfer/sec:     61.90KB
+    Latency    45.25ms    3.10ms  58.13ms   94.08%
+    Req/Sec   243.61     11.64   270.00     74.55%
+  2669 requests in 11.00s, 687.58KB read
+Requests/sec:    242.57
+Transfer/sec:     62.49KB
 ```
