@@ -32,7 +32,7 @@ for d in $($RUN list); do
   # Build and start server
   $RUN build $d
   $RUN start $d
-  sleep 5
+  sleep 10
 
   # Add server info
   echo >> $RESULTS
