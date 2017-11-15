@@ -65,7 +65,7 @@ NAME=httpbench-$SUFFIX
 # Run server action
 case $ACTION in
   "build")
-    docker build --rm -t $NAME .
+    docker build --rm --pull -t $NAME .
     ;;
   "start")
     docker run -dt --rm --name=$NAME --net="host" $NAME
