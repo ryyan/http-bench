@@ -12,6 +12,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
+import javax.ws.rs.core.Response;
 
 @Singleton
 @Path("echo/{words}")
@@ -23,12 +24,10 @@ public class EchoResource {
 	/**
 	 * Method handling HTTP GET requests. The returned object will be sent to the
 	 * client as "application/json" media type.
-	 *
-	 * @return String that will be returned as a application/json response.
 	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public String echo(@PathParam("words") String words, @QueryParam("num") Integer num) {
+	public Response echo(@PathParam("words") String words, @QueryParam("num") Integer num) {
 		// Log request
 		System.out.printf("%s %s\n", new Date(), request.getMethod());
 
@@ -37,10 +36,10 @@ public class EchoResource {
 
 		// Verify parameters
 		if (!words.toLowerCase().equals("helloworld") || !num.equals(1234567890)) {
-			return "{\"error\": \"Invalid parameters\"}";
+      return Response.status(400).entity("{\"error\": \"invalid parameters\"}").build();
 		}
 
 		// Return response
-		return String.format("{\"message\": \"%s\"}", UUID.randomUUID());
+    return Response.status(200).entity(String.format("{\"message\": \"%s\"}", UUID.randomUUID())).build();
 	}
 }

@@ -17,9 +17,7 @@ public class Server {
 	}
 
 	public static void main(String[] args) throws IOException {
-		final HttpServer server = startServer();
+		startServer().start();
 		System.out.println(String.format("Server started at %s", BASE_URI));
-		System.in.read();
-		server.shutdownNow();
 	}
 }
