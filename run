@@ -77,7 +77,7 @@ case $ACTION in
     docker run -it --rm --name=$NAME --net="host" -v ${PWD}:/app $NAME sh
     ;;
   "info")
-    docker exec $NAME sh info
+    docker run -it --rm $NAME sh info
     ;;
   "stop")
     docker kill $NAME
