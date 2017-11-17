@@ -1,4 +1,4 @@
-FROM openjdk:jdk
+FROM openjdk:8-jdk
 
 EXPOSE 8888
 
