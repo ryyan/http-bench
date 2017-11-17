@@ -36,7 +36,7 @@ public class EchoResource {
 
 		// Verify parameters
 		if (!words.toLowerCase().equals("helloworld") || !num.equals(1234567890)) {
-      return Response.status(400).entity("{\"error\": \"invalid parameters\"}").build();
+      return Response.status(400).entity("{\"error\": \"Invalid parameters\"}").build();
 		}
 
 		// Return response

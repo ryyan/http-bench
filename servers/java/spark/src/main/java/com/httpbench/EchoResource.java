@@ -20,7 +20,7 @@ public class EchoResource {
 		if (!words.toLowerCase().equals("helloworld") || !num.equals(1234567890)) {
 			res.status(400);
 			res.type("application/json");
-			return "{\"error\": \"invalid parameters\"}";
+			return "{\"error\": \"Invalid parameters\"}";
 		}
 
 		// Return response
