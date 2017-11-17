@@ -44,6 +44,7 @@ for d in $($RUN list); do
   echo >> $RESULTS
   echo "\`\`\`" >> $RESULTS
   $RUN test | tee -a $RESULTS
+  sleep 1
   $RUN benchmark | tee -a $RESULTS
   echo "\`\`\`" >> $RESULTS
 
