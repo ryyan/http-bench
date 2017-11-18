@@ -1,0 +1,12 @@
+[package]
+name = "server"
+version = "1.0.0"
+
+[lib]
+name = "server"
+path = "src/main.rs"
+
+[dependencies]
+uuid = { version = "*", features = ["v4"] }
+time = "*"
+nickel = "*"
