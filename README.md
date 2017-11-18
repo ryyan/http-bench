@@ -2,7 +2,9 @@
 
 Benchmarks http servers
 
-[View the latest results](RESULTS.md)
+[View the latest results in RESULTS.md](RESULTS.md)
+
+![Results graph](RESULTS.png?raw=true)
 
 ## Setup
 
@@ -63,5 +65,3 @@ Each server must:
   - If both are valid (happy path), return
     - Status: `200 OK`
     - Body: `{"message": "random UUID v4"}`
-
-- Be consistent across languages - think "real-world usage" instead of "maximum performance"

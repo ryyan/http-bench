@@ -1,0 +1,3 @@
+#!/bin/bash
+NAME=httpbench-grapher
+docker build --rm -t $NAME .
