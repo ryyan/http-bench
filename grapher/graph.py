@@ -22,7 +22,7 @@ def parse_results_file(value_to_parse):
         # Parse value
         if (line.startswith(value_to_parse)):
             parsed_value = line.lstrip(value_to_parse).strip()
-            parsed_value = round(float(req_per_sec))
+            parsed_value = round(float(parsed_value))
             results.append((server, parsed_value))
 
     results_file.close()
