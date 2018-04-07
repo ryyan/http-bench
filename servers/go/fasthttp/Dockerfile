@@ -6,7 +6,7 @@ WORKDIR /go/src/app
 COPY . .
 
 RUN apk add --update git
-RUN go-wrapper download
-RUN go-wrapper install
+RUN go get -d -v ./...
+RUN go install -v ./...
 
-CMD ["go-wrapper", "run"]
+CMD ["app"]

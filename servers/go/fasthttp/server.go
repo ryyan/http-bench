@@ -39,7 +39,7 @@ func EchoHandler(ctx *fasthttp.RequestCtx) {
 	}
 
 	// Return response
-	response := &Response{uuid.NewV4().String(), ""}
+	response := &Response{uuid.Must(uuid.NewV4()).String(), ""}
 	responseJson, _ := json.Marshal(response)
 	writeResponse(ctx, http.StatusOK, responseJson)
 }

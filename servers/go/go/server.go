@@ -33,7 +33,7 @@ func EchoHandler(res http.ResponseWriter, req *http.Request) {
 	}
 
 	// Return response
-	response := &Response{uuid.NewV4().String(), ""}
+	response := &Response{uuid.Must(uuid.NewV4()).String(), ""}
 	responseJson, _ := json.Marshal(response)
 	writeResponse(res, http.StatusOK, responseJson)
 }
