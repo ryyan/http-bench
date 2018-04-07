@@ -7,40 +7,33 @@ import numpy as np
 import pylab
 
 
-# Parses server/value_to_parse tuples from RESULTS.md
+# Parses (server, value_to_parse) tuples from RESULTS.md
 # Example output: [('go/go', 100), ('go/fasthttp', 200)]
 def parse_results_file(value_to_parse):
     print('Parsing RESULTS.md for', value_to_parse)
     results_file = open('RESULTS.md')
-    at_benchmarks = False
     results = []
-    server = ''
 
     for line in results_file:
-        # Iterate until after Benchmarks line
-        if at_benchmarks == False:
-            if ('# Benchmarks' in line):
-                at_benchmarks = True
-
-        # Iterate until server
+        # Parse server
         if (line.startswith('## ')):
             server = line.lstrip('## ').strip()
 
-        # Iterate until value and save
+        # Parse value
         if (line.startswith(value_to_parse)):
-            req_per_sec = line.lstrip(value_to_parse).strip()
-            req_per_sec = round(float(req_per_sec))
-            results.append((server, req_per_sec))
+            parsed_value = line.lstrip(value_to_parse).strip()
+            parsed_value = round(float(req_per_sec))
+            results.append((server, parsed_value))
 
     results_file.close()
 
-    # Sort result and return
+    # Return sorted results
     return sorted(results, key=itemgetter(1))
 
 
 # Builds and saves bar chart
 def build_bar_chart(x_axis_label, parsed_values):
-    print('Building bar chart...')
+    print('Building bar chart')
 
     # Split tuple server/values
     servers, values = zip(*parsed_values)
@@ -55,7 +48,7 @@ def build_bar_chart(x_axis_label, parsed_values):
 
 
 def main():
-    print('Running grapher...')
+    print('Running grapher')
 
     # Values to parse from RESULTS.md
     # First val in tuple is the line to look for in RESULTS.md

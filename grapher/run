@@ -1,3 +1,4 @@
 #!/bin/bash
 NAME=httpbench-grapher
+docker build --rm -t $NAME .
 docker run -it --rm --name=$NAME -v ${PWD}:/app -v ${PWD}/../RESULTS.md:/app/RESULTS.md $NAME $1
