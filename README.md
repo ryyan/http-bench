@@ -6,6 +6,7 @@ Benchmarks http servers
 
 Requests per second
 
+```
 ██████████████████████████████████████████████████  33.3K  go/fasthttp 
 ██████████████████████████████████████              25.5K  go/go 
 ████████████████████████████████████                24.4K  rust/nickel 
@@ -17,6 +18,7 @@ Requests per second
 ██                                                   1.3K  python/flask 
 249.0  ruby/sinatra 
 246.0  node/server 
+```
 
 <br />
 
