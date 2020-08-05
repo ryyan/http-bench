@@ -44,7 +44,7 @@ def main():
                 float_format="{0:,.1f}",
             )
         for line in graph.graph(vtp[1], parsed_values):
-            print(line.strip() + "\n")
+            print(line.strip() + " ")
         #build_bar_chart(vtp[1], parsed_values)
 
     print('Done!')

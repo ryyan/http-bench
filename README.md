@@ -6,27 +6,17 @@ Benchmarks http servers
 
 Requests per second
 
-██████████████████████████████████████████████████  33.3K  go/fasthttp
-
-██████████████████████████████████████              25.5K  go/go
-
-████████████████████████████████████                24.4K  rust/nickel
-
-█████████████                                        9.0K  java/spark
-
-██████                                               4.5K  node/express
-
-██████                                               4.1K  java/jersey
-
-███                                                  2.4K  python/aiohttp
-
-██                                                   1.8K  php/slim
-
-██                                                   1.3K  python/flask
-
-249.0  ruby/sinatra
-
-246.0  node/server
+██████████████████████████████████████████████████  33.3K  go/fasthttp 
+██████████████████████████████████████              25.5K  go/go 
+████████████████████████████████████                24.4K  rust/nickel 
+█████████████                                        9.0K  java/spark 
+██████                                               4.5K  node/express 
+██████                                               4.1K  java/jersey 
+███                                                  2.4K  python/aiohttp 
+██                                                   1.8K  php/slim 
+██                                                   1.3K  python/flask 
+249.0  ruby/sinatra 
+246.0  node/server 
 
 <br />
 
