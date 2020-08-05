@@ -1,17 +1,13 @@
 from operator import itemgetter
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-plt.rcdefaults()
-import numpy as np
-import pylab
+
+from ascii_graph import Pyasciigraph
 
 
 # Parses (server, value_to_parse) tuples from RESULTS.md
 # Example output: [('go/go', 100), ('go/fasthttp', 200)]
 def parse_results_file(value_to_parse):
     print('Parsing RESULTS.md for', value_to_parse)
-    results_file = open('RESULTS.md')
+    results_file = open('../RESULTS.md')
     results = []
 
     for line in results_file:
@@ -28,23 +24,7 @@ def parse_results_file(value_to_parse):
     results_file.close()
 
     # Return sorted results
-    return sorted(results, key=itemgetter(1))
-
-
-# Builds and saves bar chart
-def build_bar_chart(x_axis_label, parsed_values):
-    print('Building bar chart')
-
-    # Split tuple server/values
-    servers, values = zip(*parsed_values)
-
-    y_pos = np.arange(len(servers))
-    plt.barh(y_pos, values, align='center', alpha=1.0)
-    plt.yticks(y_pos, servers)
-    plt.xlabel(x_axis_label)
-    plt.tick_params(axis='y', pad=2)
-    plt.tight_layout()
-    plt.savefig('RESULTS.png')
+    return sorted(results, key=itemgetter(1), reverse=True)
 
 
 def main():
@@ -55,9 +35,17 @@ def main():
     # Second val in tuple is the X-axis label in graph
     values_to_parse = [('Requests/sec:', 'Requests per second')]
 
+
     for vtp in values_to_parse:
         parsed_values = parse_results_file(vtp[0])
-        build_bar_chart(vtp[1], parsed_values)
+        graph = Pyasciigraph(
+                line_length=1,
+                human_readable="si",
+                float_format="{0:,.1f}",
+            )
+        for line in graph.graph(vtp[1], parsed_values):
+            print(line)
+        #build_bar_chart(vtp[1], parsed_values)
 
     print('Done!')
 
