@@ -5,7 +5,7 @@ Benchmarks http servers
 [View the latest results in RESULTS.md](RESULTS.md)
 
 ```
-Request per second
+Requests per second
 
 ██████████████████████████████████████████████████  33.3K  go/fasthttp 
 ██████████████████████████████████████              25.5K  go/go 
