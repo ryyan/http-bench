@@ -1,0 +1,25 @@
+#!/bin/bash
+# Run a single server benchmark, useful for debugging
+set -e
+
+SERVER=$1 # ex: go/go
+
+# Script directory path
+SOURCE=$(dirname $(readlink -f $0))
+
+# Run script path
+RUN=$SOURCE/run
+
+# Build and start server
+$RUN build $SERVER
+$RUN start $SERVER &
+sleep 10
+
+# Run test and benchmark
+$RUN test
+sleep 1
+$RUN benchmark
+
+# Stop and delete server image
+$RUN stop $SERVER
+$RUN clean $SERVER

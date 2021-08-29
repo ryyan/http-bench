@@ -1,4 +1,6 @@
 #!/bin/bash
+# Run all benchmakrs to generate new RESULTS.md
+set -e
 
 # Script directory path
 SOURCE=$(dirname $(readlink -f $0))
@@ -24,20 +26,20 @@ printf "\n---\n\n" >> $RESULTS
 echo "# Benchmarks" >> $RESULTS
 
 # Iterate over servers and run benchmarks
-for d in $($RUN list); do
+for server in $($RUN list); do
   # Add server header
   echo >> $RESULTS
-  echo "## $d" | tee -a $RESULTS
+  echo "## $server" | tee -a $RESULTS
 
   # Build and start server
-  $RUN build $d
-  $RUN start $d
+  $RUN build $server
+  $RUN start $server &
   sleep 10
 
   # Add server info
   echo >> $RESULTS
   echo "\`\`\`" >> $RESULTS
-  $RUN info $d | tee -a $RESULTS
+  $RUN info $server | tee -a $RESULTS
   echo "\`\`\`" >> $RESULTS
 
   # Add test and benchmark block
@@ -49,6 +51,6 @@ for d in $($RUN list); do
   echo "\`\`\`" >> $RESULTS
 
   # Stop and delete server image
-  $RUN stop $d
-  $RUN clean $d
+  $RUN stop $server
+  $RUN clean $server
 done
