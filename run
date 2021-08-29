@@ -33,7 +33,7 @@ case $ACTION in
   "test")
     echo "Running test"
 
-    HAPPY_TEST=$(curl localhost:8888/api/echo/HelloWorld?num=1234567890)
+    HAPPY_TEST=$(curl localhost:8888/echo/HelloWorld?num=1234567890)
     if [[ $HAPPY_TEST == "{\"message\":"* ]]
     then
       printf "HappyTest-PASS, "
@@ -42,7 +42,7 @@ case $ACTION in
       printf "$HAPPY_TEST, "
     fi
 
-    ERROR_TEST=$(curl localhost:8888/api/echo/AlohaWorld?num=321)
+    ERROR_TEST=$(curl localhost:8888/echo/GoodbyeWorld?num=321)
     if [[ $ERROR_TEST == "{\"error\":"*"\"Invalid parameters\"}" ]]
 
     then

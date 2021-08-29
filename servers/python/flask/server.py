@@ -5,7 +5,7 @@ import datetime
 from flask import Flask, request, Response
 app = Flask(__name__)
 
-@app.route('/api/echo/<words>')
+@app.route('/echo/<words>')
 def EchoHandler(words):
     # Log request
     # Automatically logged

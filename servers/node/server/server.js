@@ -22,5 +22,5 @@ async function EchoHandler(ctx) {
 }
 
 server({ port: 8888 }, [
-  get('/api/echo/:words', async ctx => EchoHandler(ctx))
+  get('/echo/:words', async ctx => EchoHandler(ctx))
 ]);

@@ -3,7 +3,7 @@ require 'sinatra/json'
 set :bind, '0'
 set :port, 8888
 
-get '/api/echo/:words' do
+get '/echo/:words' do
   # Log request
   # Automatically done
 

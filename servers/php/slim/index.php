@@ -11,7 +11,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$app->get('/api/echo/{words}', function (Request $request, Response $response) {
+$app->get('/echo/{words}', function (Request $request, Response $response) {
   # Log request
   # Automatically done by nginx
 

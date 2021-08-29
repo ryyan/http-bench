@@ -20,5 +20,5 @@ function EchoHandler(req, res) {
 }
 
 const app = express()
-app.get('/api/echo/:words', (req, res) => EchoHandler(req, res));
+app.get('/echo/:words', (req, res) => EchoHandler(req, res));
 app.listen(8888, () => console.log('Server listening on port 8888'));

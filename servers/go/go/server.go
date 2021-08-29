@@ -45,7 +45,7 @@ func writeResponse(res http.ResponseWriter, statusCode int, message []byte) {
 }
 
 func main() {
-	http.HandleFunc("/api/echo/", EchoHandler) // Trailing slash at end for rooted subtree path
+	http.HandleFunc("/echo/", EchoHandler) // Trailing slash at end for rooted subtree path
 	log.Println("Starting serving on port 8888")
 	log.Fatal(http.ListenAndServe(":8888", nil))
 }
