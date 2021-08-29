@@ -52,6 +52,8 @@ case $ACTION in
       printf "$ERROR_TEST\n"
     fi
 
+    exit;;
+
 esac
 
 # Verify second parameter exists (server/directory)
