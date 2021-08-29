@@ -6,9 +6,8 @@ import (
 	"net/http"
 	"strings"
 
-	uuid "github.com/satori/go.uuid"
+	uuid "github.com/google/uuid"
 	fasthttp "github.com/valyala/fasthttp"
-	reuseport "github.com/valyala/fasthttp/reuseport"
 )
 
 type Response struct {
@@ -17,6 +16,8 @@ type Response struct {
 }
 
 func EchoHandler(ctx *fasthttp.RequestCtx) {
+	log.Println("hi")
+
 	// Simulate routing
 	path := string(ctx.Path())
 	if strings.HasPrefix(path, "/api/echo/") == false {
@@ -39,7 +40,7 @@ func EchoHandler(ctx *fasthttp.RequestCtx) {
 	}
 
 	// Return response
-	response := &Response{uuid.Must(uuid.NewV4()).String(), ""}
+	response := &Response{uuid.New().String(), ""}
 	responseJson, _ := json.Marshal(response)
 	writeResponse(ctx, http.StatusOK, responseJson)
 }
@@ -51,11 +52,6 @@ func writeResponse(ctx *fasthttp.RequestCtx, statusCode int, message []byte) {
 }
 
 func main() {
-	ln, err := reuseport.Listen("tcp4", "localhost:8888")
-	if err != nil {
-		log.Fatalf("Error starting listener: %s", err)
-	}
-
 	log.Println("Starting server on port 8888")
-	log.Fatal(fasthttp.Serve(ln, EchoHandler))
+	log.Fatal(fasthttp.ListenAndServe(":8888", EchoHandler))
 }
