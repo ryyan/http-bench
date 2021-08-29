@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	uuid "github.com/satori/go.uuid"
+	uuid "github.com/google/uuid"
 )
 
 type Response struct {
@@ -33,7 +33,7 @@ func EchoHandler(res http.ResponseWriter, req *http.Request) {
 	}
 
 	// Return response
-	response := &Response{uuid.Must(uuid.NewV4()).String(), ""}
+	response := &Response{uuid.New().String(), ""}
 	responseJson, _ := json.Marshal(response)
 	writeResponse(res, http.StatusOK, responseJson)
 }
