@@ -27,6 +27,16 @@ Use `./run <action> <server>` to run individual servers and benchmarks
 ./run clean go/go       # Delete docker image
 ```
 
+Example script to run a single test case
+
+```bash
+./run build go/go
+./run start go/go
+./run test
+./run benchmark
+./run stop go/go
+```
+
 Use `./run-benchmarks` to run the full suite of benchmarks and output to RESULTS.md
 
 ```bash
