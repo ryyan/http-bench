@@ -25,4 +25,4 @@ async def EchoHandler(req):
 
 app = web.Application()
 app.router.add_get('/api/echo/{words}', EchoHandler)
-web.run_app(app, host='127.0.0.1', port=8888)
+web.run_app(app, host='0', port=8888)
