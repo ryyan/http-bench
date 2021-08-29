@@ -1,5 +1,5 @@
 const express = require('express')
-const uuidv4 = require('uuid/v4');
+const uuid = require('uuid');
 
 function EchoHandler(req, res) {
   // Log request
@@ -16,7 +16,7 @@ function EchoHandler(req, res) {
   }
 
   // Return response
-  res.status(200).json({message: uuidv4()});
+  res.status(200).json({message: uuid.v4()});
 }
 
 const app = express()

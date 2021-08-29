@@ -1,5 +1,5 @@
 const server = require('server');
-const uuidv4 = require('uuid/v4');
+const uuid = require('uuid');
 
 const get = server.router.get;
 const reply = server.reply;
@@ -18,7 +18,7 @@ async function EchoHandler(ctx) {
   }
 
   // Return response
-  return reply.status(200).json({message: uuidv4()});
+  return reply.status(200).json({message: uuid.v4()});
 }
 
 server({ port: 8888 }, [
