@@ -1,0 +1,17 @@
+[package]
+name = "server"
+version = "1.0.0"
+publish = false
+edition = "2018"
+
+[lib]
+name = "server"
+path = "src/main.rs"
+
+[dependencies]
+uuid = { version = "^0.8", features = ["v4"] }
+time = "^0.3"
+mime = "^0.3"
+gotham = "^0.6"
+gotham_derive = "^0.6"
+serde = { version = "^1", features = ["derive"] }
