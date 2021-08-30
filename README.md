@@ -57,17 +57,17 @@ Each server must:
 
 - Include an `info` executable that will be used to get relevant language version and package info
 
-- Listen on port 8888 and have an "/api/echo/" endpoint
-  - "/api/echo/" endpoint expects "HelloWorld" path parameter and "?num=1234567890" query parameter
-  - Happy Path request: `localhost:8888/api/echo/HelloWorld?num=1234567890`
-  - Error Path request: `localhost:8888/api/echo/AlohaWorld?num=321`
+- Listen on port 8888 and have an "/echo/" endpoint
+  - "/echo/" endpoint expects "HelloWorld" path parameter and "?num=1234567890" query parameter
+  - Happy Path request: `localhost:8888/echo/HelloWorld?num=1234567890`
+  - Error Path request: `localhost:8888/echo/AlohaWorld?num=321`
 
 - Perform the following on each request:
   - Log request, for example [Date IP Method Url]:
-    - `2017/11/11 11:11:12 [::1]:36942 GET /api/echo/HelloWorld?num=1234567890`
+    - `2017/11/11 11:11:12 [::1]:36942 GET /echo/HelloWorld?num=1234567890`
   - Parse out the path (words) and query string (num) parameters
   - Verify the parameters
-    - Path parameter after "/api/echo" must be To-Lowercased and equal "helloworld"
+    - Path parameter after "/echo" must be To-Lowercased and equal "helloworld"
     - Query parameter "num" must be converted to an int and equal 1234567890
   - If either parameter is invalid (error path), return
     - Status: `400 Bad Request`
