@@ -27,6 +27,8 @@ echo "# Benchmarks" >> $RESULTS
 
 # Iterate over servers and run benchmarks
 for server in $($RUN list); do
+  echo "Running benchmarks for $server"
+  
   # Add server header
   echo >> $RESULTS
   echo "## $server" | tee -a $RESULTS
