@@ -1,28 +1,37 @@
 # Host Info
 ```
-07 Apr 2018
+30 Aug 2021
 
-Linux 4.9.0-6-amd64
+Linux 4.19.104-microsoft-standard
 
 Client:
- Version:	18.03.0-ce
- API version:	1.37
- Go version:	go1.9.4
- Git commit:	0520e24
- Built:	Wed Mar 21 23:10:06 2018
- OS/Arch:	linux/amd64
- Experimental:	false
- Orchestrator:	swarm
+ Version:           20.10.7
+ API version:       1.41
+ Go version:        go1.13.8
+ Git commit:        20.10.7-0ubuntu1~20.04.1
+ Built:             Wed Aug  4 22:52:25 2021
+ OS/Arch:           linux/amd64
+ Context:           default
+ Experimental:      true
 
-Server:
+Server: Docker Engine - Community
  Engine:
-  Version:	18.03.0-ce
-  API version:	1.37 (minimum version 1.12)
-  Go version:	go1.9.4
-  Git commit:	0520e24
-  Built:	Wed Mar 21 23:08:35 2018
-  OS/Arch:	linux/amd64
-  Experimental:	false
+  Version:          20.10.8
+  API version:      1.41 (minimum version 1.12)
+  Go version:       go1.16.6
+  Git commit:       75249d8
+  Built:            Fri Jul 30 19:52:10 2021
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.4.9
+  GitCommit:        e25210fe30a0a703442421b0f60afac609f950a3
+ runc:
+  Version:          1.0.1
+  GitCommit:        v1.0.1-0-g4144b63
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
 ```
 
 ---
@@ -32,243 +41,254 @@ Server:
 ## go/fasthttp
 
 ```
-go version go1.10.1 linux/amd64
+Getting info for httpbench-go-fasthttp
+go version go1.17 linux/amd64
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   401.90us  785.40us  21.98ms   96.88%
-    Req/Sec    33.49k     1.61k   37.08k    77.48%
-  369718 requests in 11.10s, 62.06MB read
-Requests/sec:  33308.67
-Transfer/sec:      5.59MB
+    Latency     1.12ms    0.89ms  10.80ms   81.18%
+    Req/Sec     4.94k   268.03     8.74k    76.10%
+  649545 requests in 33.10s, 109.02MB read
+Requests/sec:  19623.82
+Transfer/sec:      3.29MB
 ```
 
 ## go/go
 
 ```
-go version go1.10.1 linux/amd64
+Getting info for httpbench-go-go
+go version go1.17 linux/amd64
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   535.40us    0.89ms  22.50ms   95.63%
-    Req/Sec    25.65k     1.37k   28.05k    93.64%
-  280673 requests in 11.00s, 42.29MB read
-Requests/sec:  25513.16
-Transfer/sec:      3.84MB
+    Latency   705.86us  501.82us   9.27ms   82.29%
+    Req/Sec     7.44k   263.54     9.47k    71.88%
+  978905 requests in 33.10s, 147.50MB read
+Requests/sec:  29574.23
+Transfer/sec:      4.46MB
 ```
 
 ## java/jersey
 
 ```
-openjdk version "1.8.0_162"
-OpenJDK Runtime Environment (build 1.8.0_162-8u162-b12-1~deb9u1-b12)
-OpenJDK 64-Bit Server VM (build 25.162-b12, mixed mode)
+Getting info for httpbench-java-jersey
+openjdk version "16.0.2" 2021-07-20
+OpenJDK Runtime Environment (build 16.0.2+7-67)
+OpenJDK 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     4.40ms    5.72ms  68.39ms   87.32%
-    Req/Sec     4.07k     2.53k   11.08k    70.91%
-  44588 requests in 11.00s, 5.19MB read
-Requests/sec:   4052.94
-Transfer/sec:    483.15KB
+    Latency     1.42ms    1.69ms 101.46ms   93.70%
+    Req/Sec     4.22k   767.49     5.25k    89.39%
+  554643 requests in 33.00s, 64.57MB read
+Requests/sec:  16805.10
+Transfer/sec:      1.96MB
 ```
 
 ## java/spark
 
 ```
-openjdk version "1.8.0_162"
-OpenJDK Runtime Environment (build 1.8.0_162-8u162-b12-1~deb9u1-b12)
-OpenJDK 64-Bit Server VM (build 25.162-b12, mixed mode)
+Getting info for httpbench-java-spark
+openjdk version "16.0.2" 2021-07-20
+OpenJDK Runtime Environment (build 16.0.2+7-67)
+OpenJDK 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.73ms    2.51ms  49.56ms   92.06%
-    Req/Sec     9.02k     3.28k   12.05k    73.64%
-  98755 requests in 11.00s, 19.68MB read
-Requests/sec:   8977.15
-Transfer/sec:      1.79MB
+    Latency     1.44ms    1.53ms  62.12ms   89.42%
+    Req/Sec     4.01k   610.49    13.80k    94.32%
+  527175 requests in 33.10s, 105.58MB read
+Requests/sec:  15926.78
+Transfer/sec:      3.19MB
 ```
 
 ## node/express
 
 ```
-v9.11.1
-express@ /app
-+-- [40m[33mexpress@4.16.3[39m[49m 
-`-- [40m[33muuid@3.2.1[39m[49m 
-
+Getting info for httpbench-node-express
+v16.8.0
+[0mexpress@ /app[0m
+[0m+-- [33m[40mexpress@4.17.1[49m[39m[0m
+[0m`-- [33m[40muuid@8.3.2[49m[39m[0m
+[0m[0m
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     2.47ms  737.59us  12.78ms   92.94%
-    Req/Sec     4.51k   578.25     5.01k    89.09%
-  49362 requests in 11.00s, 12.33MB read
-Requests/sec:   4487.32
-Transfer/sec:      1.12MB
+    Latency     5.09ms    1.25ms  23.29ms   90.21%
+    Req/Sec     0.99k    97.29     1.16k    74.62%
+  129814 requests in 33.02s, 35.28MB read
+Requests/sec:   3931.85
+Transfer/sec:      1.07MB
 ```
 
 ## node/server
 
 ```
-v9.11.1
-server@ /app
-+-- server@1.0.18
-| `-- [40m[33mexpress@4.16.3[39m[49m 
-`-- [40m[33muuid@3.2.1[39m[49m 
-
+Getting info for httpbench-node-server
+v16.8.0
+[0mserver@ /app[0m
+[0m+-- server@1.0.35[0m
+[0m| `-- [33m[40mexpress@4.17.1[49m[39m[0m
+[0m`-- [33m[40muuid@8.3.2[49m[39m[0m
+[0m[0m
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    44.57ms    2.77ms  68.16ms   86.94%
-    Req/Sec   247.24     17.30   300.00     77.27%
-  2710 requests in 11.01s, 1.57MB read
-Requests/sec:    246.23
-Transfer/sec:    146.01KB
+    Latency    50.80ms    2.92ms  71.34ms   91.59%
+    Req/Sec    98.77      5.44   121.00     86.67%
+  12991 requests in 33.03s, 7.79MB read
+Requests/sec:    393.34
+Transfer/sec:    241.45KB
 ```
 
 ## php/slim
 
 ```
-PHP 7.1.12 (cli) (built: Dec  1 2017 19:26:10) ( NTS )
-Copyright (c) 1997-2017 The PHP Group
-Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies
-    with Zend OPcache v7.1.12, Copyright (c) 1999-2017, by Zend Technologies
+Getting info for httpbench-php-slim
+PHP 8.0.10 (cli) (built: Aug 26 2021 21:59:02) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v4.0.10, Copyright (c) Zend Technologies
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     6.00ms    0.87ms  16.41ms   77.65%
-    Req/Sec     1.84k    75.74     1.94k    83.64%
-  20124 requests in 11.00s, 4.91MB read
-Requests/sec:   1828.91
-Transfer/sec:    457.14KB
+    Latency   209.99ms    9.13ms 225.91ms   99.30%
+    Req/Sec    23.79     11.03    40.00     50.96%
+  3134 requests in 33.04s, 627.41KB read
+  Socket errors: connect 0, read 3134, write 0, timeout 0
+Requests/sec:     94.84
+Transfer/sec:     18.99KB
 ```
 
 ## python/aiohttp
 
 ```
-Python 3.6.5
-Package       Version
-------------- -------
-aiohttp       3.1.2  
-async-timeout 2.0.1  
-attrs         17.4.0 
-cchardet      2.1.1  
-chardet       3.0.4  
-idna          2.6    
-idna-ssl      1.0.1  
-multidict     4.1.0  
-pip           9.0.3  
-setuptools    39.0.1 
-wheel         0.30.0 
-yarl          1.1.1  
+Getting info for httpbench-python-aiohttp
+Python 3.9.6
+Package           Version
+----------------- -----------
+aiohttp           3.7.4.post0
+async-timeout     3.0.1
+attrs             21.2.0
+cchardet          2.1.7
+chardet           4.0.0
+idna              3.2
+multidict         5.1.0
+pip               21.2.4
+setuptools        57.4.0
+typing-extensions 3.10.0.1
+wheel             0.37.0
+yarl              1.6.3
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     4.49ms  255.34us  13.64ms   90.03%
-    Req/Sec     2.46k   106.20     2.63k    78.18%
-  26904 requests in 11.00s, 4.95MB read
-Requests/sec:   2445.74
-Transfer/sec:    460.98KB
+    Latency     5.98ms  191.83us  11.57ms   66.17%
+    Req/Sec   839.70     22.10     0.90k    73.71%
+  110345 requests in 33.02s, 20.94MB read
+Requests/sec:   3342.00
+Transfer/sec:    649.47KB
 ```
 
 ## python/flask
 
 ```
-Python 3.6.5
+Getting info for httpbench-python-flask
+Python 3.9.6
 Package      Version
 ------------ -------
-click        6.7    
-Flask        0.12.2 
-itsdangerous 0.24   
-Jinja2       2.10   
-MarkupSafe   1.0    
-pip          9.0.3  
-setuptools   39.0.1 
-Werkzeug     0.14.1 
-wheel        0.30.0 
+click        8.0.1
+Flask        2.0.1
+itsdangerous 2.0.1
+Jinja2       3.0.1
+MarkupSafe   2.0.1
+pip          21.2.4
+setuptools   57.4.0
+Werkzeug     2.0.1
+wheel        0.37.0
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     7.70ms    1.86ms  27.32ms   95.18%
-    Req/Sec     1.35k   328.40     1.51k    88.18%
-  14806 requests in 11.04s, 2.78MB read
-Requests/sec:   1341.46
-Transfer/sec:    258.07KB
+    Latency    24.26ms    2.07ms  35.88ms   68.42%
+    Req/Sec   206.16     16.83   252.00     76.44%
+  27114 requests in 33.02s, 5.07MB read
+Requests/sec:    821.02
+Transfer/sec:    157.15KB
 ```
 
 ## ruby/sinatra
 
 ```
-ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-musl]
+Getting info for httpbench-ruby-sinatra
+ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux]
 
 *** LOCAL GEMS ***
 
-sinatra (2.0.1)
-sinatra-contrib (2.0.1)
+sinatra (2.1.0)
+sinatra-contrib (2.1.0)
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    43.98ms    2.16ms  60.86ms   97.20%
-    Req/Sec   250.50     20.82   300.00     70.00%
-  2749 requests in 11.05s, 708.33KB read
-Requests/sec:    248.84
-Transfer/sec:     64.12KB
+    Latency     2.18ms    1.03ms  12.12ms   66.17%
+    Req/Sec     0.92k   466.56     1.53k    53.79%
+  60387 requests in 33.05s, 8.87MB read
+Requests/sec:   1827.42
+Transfer/sec:    274.83KB
 ```
 
-## rust/nickel
+## rust/gotham
 
 ```
-rustc 1.25.0 (84203cac6 2018-03-25)
+Getting info for httpbench-rust-gotham
+rustc 1.54.0 (a178d0322 2021-07-26)
 ```
 
 ```
 HappyTest-PASS, ErrorTest-PASS
-Running 11s test @ http://127.0.0.1:8888/api/echo/HelloWorld?num=1234567890
-  1 threads and 11 connections
+Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
+  4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   181.16us   98.12us   5.74ms   80.18%
-    Req/Sec    24.50k   407.03    25.76k    73.64%
-  268128 requests in 11.00s, 49.10MB read
-Requests/sec:  24374.02
-Transfer/sec:      4.46MB
+    Latency   353.75us  140.67us   5.43ms   76.28%
+    Req/Sec    13.67k   784.59    15.25k    68.50%
+  1800417 requests in 33.10s, 358.86MB read
+Requests/sec:  54394.16
+Transfer/sec:     10.84MB
 ```
