@@ -13,4 +13,6 @@ RUN wget -q https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin
 ENV GRADLE_HOME /opt/gradle-$GRADLE_VERSION
 ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 
+RUN gradle build
+
 CMD ["gradle" "run"]
