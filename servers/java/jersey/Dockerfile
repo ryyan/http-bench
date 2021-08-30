@@ -15,4 +15,4 @@ ENV PATH $PATH:/opt/gradle-$GRADLE_VERSION/bin
 
 RUN gradle build
 
-CMD ["gradle" "run"]
+CMD ["gradle", "run"]

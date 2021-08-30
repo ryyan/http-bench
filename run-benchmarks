@@ -27,18 +27,22 @@ echo "# Benchmarks" >> $RESULTS
 
 # Iterate over servers and run benchmarks
 for server in $($RUN list); do
-  echo "Running benchmarks for $server"
+  echo "--- $server ---"
   
   # Add server header
   echo >> $RESULTS
   echo "## $server" | tee -a $RESULTS
 
   # Build and start server
+  echo "Building"
   $RUN build $server
+  echo "Starting"
   $RUN start $server &
-  sleep 10
+  echo "Sleeping"
+  sleep 15
 
   # Add server info
+  echo "Getting server info"
   echo >> $RESULTS
   echo "\`\`\`" >> $RESULTS
   $RUN info $server | tee -a $RESULTS
@@ -47,12 +51,15 @@ for server in $($RUN list); do
   # Add test and benchmark block
   echo >> $RESULTS
   echo "\`\`\`" >> $RESULTS
+  echo "Testing"
   $RUN test | tee -a $RESULTS
   sleep 1
+  echo "Running"
   $RUN benchmark | tee -a $RESULTS
   echo "\`\`\`" >> $RESULTS
 
   # Stop and delete server image
+  echo "Cleaning"
   $RUN stop $server
   $RUN clean $server
 done

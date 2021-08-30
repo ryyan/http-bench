@@ -20,7 +20,7 @@ func EchoHandler(ctx *fasthttp.RequestCtx) {
 
 	// Simulate routing
 	path := string(ctx.Path())
-	if strings.HasPrefix(path, "/api/echo/") == false {
+	if strings.HasPrefix(path, "/echo/") == false {
 		ctx.Error("Unsupported path", fasthttp.StatusNotFound)
 	}
 
@@ -28,7 +28,7 @@ func EchoHandler(ctx *fasthttp.RequestCtx) {
 	log.Printf("%s %s %s", ctx.RemoteAddr(), ctx.Method(), ctx.URI())
 
 	// Parse parameters
-	words := strings.TrimLeft(path, "/api/echo/")
+	words := strings.TrimLeft(path, "/echo/")
 	number, _ := ctx.URI().QueryArgs().GetUint("num")
 
 	// Verify parameters

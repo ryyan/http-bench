@@ -20,7 +20,7 @@ func EchoHandler(res http.ResponseWriter, req *http.Request) {
 	log.Printf("%s %s %s", req.RemoteAddr, req.Method, req.URL)
 
 	// Parse parameters
-	words := strings.TrimLeft(req.URL.Path, "/api/echo/")
+	words := strings.TrimLeft(req.URL.Path, "/echo/")
 	numberString := req.URL.Query().Get("num")
 	number, _ := strconv.Atoi(numberString)
 
