@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.sparkjava:spark-core:2.9.3'
+}
+
+group = 'com.httpbench'
+version = '1.0-SNAPSHOT'
+description = 'spark'
+java.sourceCompatibility = JavaVersion.VERSION_16
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainClassName = "com.httpbench.Server"
+}
