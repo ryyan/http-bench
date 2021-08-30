@@ -9,7 +9,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 
 public class Server {
 
-	public static final String BASE_URI = "http://localhost:8888/api/";
+	public static final String BASE_URI = "http://0.0.0.0:8888/";
 
 	public static HttpServer startServer() {
 		final ResourceConfig rc = new ResourceConfig().packages("com.httpbench");
