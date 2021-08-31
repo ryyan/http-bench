@@ -286,9 +286,9 @@ HappyTest-PASS, ErrorTest-PASS
 Running 33s test @ http://127.0.0.1:8888/echo/HelloWorld?num=1234567890
   4 threads and 20 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   353.75us  140.67us   5.43ms   76.28%
-    Req/Sec    13.67k   784.59    15.25k    68.50%
-  1800417 requests in 33.10s, 358.86MB read
-Requests/sec:  54394.16
-Transfer/sec:     10.84MB
+    Latency   549.74us  328.52us  15.64ms   85.61%
+    Req/Sec     9.26k   584.07    10.97k    75.49%
+  1218259 requests in 33.10s, 242.82MB read
+Requests/sec:  36806.16
+Transfer/sec:      7.34MB
 ```
