@@ -33,6 +33,7 @@ impl IntoResponse for Message {
 fn echo(state: State) -> (State, Message) {
     // Log request
     // TODO: log request
+    println!("Log request");
     //println!("{} {} {} {}", time::now().rfc3339().to_string(), request.origin.remote_addr, request.origin.method, request.origin.uri);
 
     // Parse parameters
