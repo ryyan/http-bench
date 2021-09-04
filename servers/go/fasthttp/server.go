@@ -8,6 +8,7 @@ import (
 
 	uuid "github.com/google/uuid"
 	fasthttp "github.com/valyala/fasthttp"
+	reuseport "github.com/valyala/fasthttp/reuseport"
 )
 
 type Response struct {
@@ -52,6 +53,11 @@ func writeResponse(ctx *fasthttp.RequestCtx, statusCode int, message []byte) {
 }
 
 func main() {
+	listener, err := reuseport.Listen("tcp4", "0.0.0.0:8888")
+	if err != nil {
+		log.Fatalf("Error starting listener: %s", err)
+	}
+
 	log.Println("Starting server on port 8888")
-	log.Fatal(fasthttp.ListenAndServe(":8888", EchoHandler))
+	log.Fatal(fasthttp.Serve(listener, EchoHandler))
 }
